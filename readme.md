@@ -61,11 +61,20 @@ The application is fully Dockerized and can be started with a single shell comma
 7. **Reference Documentation:**
    - Consult the `README` file for additional details and GitHub repository information.
 
-**Note** : The application uses docker compose v2 by default hence : 
-docker compose will work if v1 is being used docker-compose will be only functional.
+**Note:**
 
-Installation of dependencies will be automatically handled by Docker. Transfer of environment variables will
-be also handled automatically handled by docker.
+- The application uses Docker Compose v2 by default. Therefore:
+  - `docker compose` commands will work if Docker Compose v2 is being used.
+  - `docker-compose` commands will only be functional if v1 is in use.
+
+- Installation of dependencies and transfer of environment variables will be automatically handled by Docker.
+
+- If `sh` is not functional, try using `bash` to execute the shell script.
+
+- If permissions are insufficient, please use the following command to set the necessary permissions:
+  ```bash
+  chmod +x start_project.sh
+
 ## API Collection can be found at : 
 
 - www.google.com

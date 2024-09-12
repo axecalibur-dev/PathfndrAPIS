@@ -31,6 +31,7 @@ class Amadeus:
             response = requests.get(flight_search_url, headers=headers, params=params)
             if response.status_code == 200:
                 data = response.json()
+                print(data)
                 if not data or 'data' not in data:
                     logger.warning('No flight data found in response.')
                     return {}
@@ -75,6 +76,8 @@ class Amadeus:
             elif response.status_code == 403:
                 logger.error("Authorization failed with Amadeus.")
                 return {}
+
+
 
             elif response.status_code == 500:
                 logger.error("Something went wrong with Amadeus token.")
