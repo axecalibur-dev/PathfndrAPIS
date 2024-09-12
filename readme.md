@@ -75,6 +75,4 @@ The application is fully Dockerized and can be started with a single shell comma
   ```bash
   chmod +x start_project.sh
 
-## API Collection can be found at : 
 
-- www.google.com
