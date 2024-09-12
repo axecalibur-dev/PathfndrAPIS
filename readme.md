@@ -75,4 +75,12 @@ The application is fully Dockerized and can be started with a single shell comma
   ```bash
   chmod +x start_project.sh
 
+## Token Management and Refresh
 
+Upon startup, the application fetches an access token from Amadeus using the provided client credentials (client ID and client secret) and stores it in Redis for future API calls. The token is valid for 30 minutes.
+
+- **Token Fetching**: The application retrieves an access token from Amadeus and stores it in Redis when it starts up.
+- **Token Expiry Handling**:
+  - **Automatic Refresh**: If the application while an api call is being made encounters a `401 Unauthorized` response from Amadeus, or if the token expires after 30 minutes, a new token is automatically fetched and stored in Redis. This ensures a seamless experience without manual intervention.
+
+This process maintains continuous access to the Amadeus API and improves the reliability of the application.
