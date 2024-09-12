@@ -4,7 +4,7 @@ import redis
 
 
 class RedisUtil:
-    client = redis.Redis(host='localhost', port=6379,decode_responses=True)
+    client = redis.Redis(host='pathfndr-redis', port=6379,decode_responses=True)
 
     @classmethod
     def set(cls, key, value, ex=None):

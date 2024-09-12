@@ -1,0 +1,27 @@
+services:
+  app:
+    container_name: server
+    build:
+      context: .
+      dockerfile: Dockerfile  # Dockerfile path
+    env_file:
+      - .env  # Path to your .env file
+    ports:
+      - "8000:8000"  # Map port 8000 on the host to port 8000 in the container
+    depends_on:
+      - redis  # Ensure the Redis service starts before the Flask app
+    volumes:
+      - .:/app  # Mount the current directory to /app inside the container
+    command: flask run --host=0.0.0.0 --port=8000  # Run the Flask app
+
+  redis:
+    container_name: pathfndr-redis
+    image: "redis:alpine"  # Lightweight Redis image
+    ports:
+      - "6379:6379"  # Map Redis default port to the host
+    volumes:
+      - redis-data:/data  # Persist Redis data
+
+volumes:
+  redis-data:
+    driver: local  # Local driver for Redis volume persistence

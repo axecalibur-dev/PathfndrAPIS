@@ -46,7 +46,7 @@ class Amadeus:
                 return client_response
 
             elif response.status_code == 401:
-                logger.warning("Access token expired. Refreshing token.")
+                logger.warning("Access token invalid/expired. Refreshing token.")
                 fresh_token = AmadeusTokenManager.token_refresh(generate_new_token=True)
                 RedisUtil.set("access_token", fresh_token)
                 headers['Authorization'] = f'Bearer {fresh_token}'

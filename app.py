@@ -1,3 +1,5 @@
+import os
+
 from flask import Flask, jsonify,request
 from dotenv import load_dotenv
 from pydantic import ValidationError
@@ -10,6 +12,7 @@ from startup import application_startup
 
 app = Flask(__name__)
 load_dotenv()
+application_startup()
 
 
 @app.route('/health', methods=['GET'])
@@ -41,6 +44,8 @@ def get_flights_info():
     return jsonify({"data": flight_details})
 
 
-if __name__ == '__main__':
-    application_startup()
-    app.run(debug=True)
+# if __name__ == '__main__':
+#
+#     print("HE>>>>>")
+#     print(os.environ.get('PORT'))
+#     app.run(debug=True,port=os.environ.get('SERVER_PORT'))
