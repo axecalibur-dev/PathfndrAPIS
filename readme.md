@@ -1,6 +1,6 @@
 # Pathfndr - Amadeus APIs
 
-## Stack
+## Technical Stack
 
 The application utilizes the following technologies:
 
@@ -46,23 +46,26 @@ The application is fully Dockerized and can be started with a single shell comma
 
 3. **Set Up Virtual Environment:**
    - Create a virtual environment and activate it within the project directory.
-   - python -m venv venv
+   - python3 -m venv venv
    - source venv/bin/activate
 
 4. **Ensure Docker is Running:**
    - Verify that Docker is running in the background.
 
 5. **Navigate to Project Directory:**
-   - Go to the project root directory and navigate to bash inside project root.
+   - Go to the project root directory and navigate to bash directory inside project root.
 
 6. **Start the Project:**
-   - Run the command `sh start_project.sh` to start the application, which will be served at port 8000.
+   - Run the command `sh start_project.sh` to start the application, which will be served at a designated port.
 
 7. **Reference Documentation:**
    - Consult the `README` file for additional details and GitHub repository information.
 
 **Note** : The application uses docker compose v2 by default hence : 
 docker compose will work if v1 is being used docker-compose will be only functional.
+
+Installation of dependencies will be automatically handled by Docker. Transfer of environment variables will
+be also handled automatically handled by docker.
 ## API Collection can be found at : 
 
 - www.google.com
