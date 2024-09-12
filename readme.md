@@ -61,7 +61,8 @@ The application is fully Dockerized and can be started with a single shell comma
 7. **Reference Documentation:**
    - Consult the `README` file for additional details and GitHub repository information.
 
-
+**Note** : The application uses docker compose v2 by default hence : 
+docker compose will work if v1 is being used docker-compose will be only functional.
 ## API Collection can be found at : 
 
 - www.google.com
